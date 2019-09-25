@@ -17,4 +17,6 @@ class Test(Resource):
 class DBCheck(Resource):
     def get(self):
         connection = DbConnectionManager.open_connection()
+        print(str(connection.get_server_info))
+
         return connection.get_server_info()
